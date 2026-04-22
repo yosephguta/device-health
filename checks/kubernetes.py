@@ -2,7 +2,8 @@ import subprocess
 
 def check_kubernetes():
     try:
-        output = subprocess.run(['kubectl', 'get',  'pods', '--all-namespaces'], capture_output=True , text=True)
+        output = subprocess.run(['kubectl', 'get',  'pods', '--all-namespaces'], 
+        capture_output=True , text=True)
         results = {
             "kubectl_available": output.returncode == 0,
             "output": output.stdout 
